@@ -72,7 +72,7 @@ class Stack:
         return top_data
 
     def _get_items_from_iterable(self, iterable: Iterable):
-        """Incorporate items from iterable into the linked list."""
+        """Incorporate items from iterable into the stack."""
 
         for item in iterable:
             self.push(item)
