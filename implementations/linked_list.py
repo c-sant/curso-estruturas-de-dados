@@ -4,12 +4,19 @@ from implementations.node import Node
 
 
 class LinkedList:
-    def __init__(self, iterable: Iterable = None):
+    """A simple linked list implementation in Python.
+
+    This class represents a singly linked list, where each element is stored
+    in a Node object. Each Node contains a 'data' field that holds the element
+    value and a 'next' reference pointing to the next Node in the list.
+    """
+
+    def __init__(self, items: Iterable = None):
         self._head = None
         self._size = 0
 
-        if iterable != None:
-            self._get_iterable_elements(iterable)
+        if items != None:
+            self._get_items_from_iterable(items)
 
     def __len__(self) -> int:
         return self.size
@@ -43,6 +50,7 @@ class LinkedList:
 
     @property
     def size(self) -> int:
+        """The number of elements of the list."""
         return self._size
 
     def append(self, item):
@@ -85,6 +93,8 @@ class LinkedList:
 
         raise ValueError(f"'{item}' not in list")
 
-    def _get_iterable_elements(self, iterable: Iterable):
+    def _get_items_from_iterable(self, iterable: Iterable):
+        """Incorporate items from iterable into the linked list."""
+
         for item in iterable:
             self.append(item)
