@@ -2,10 +2,10 @@ from typing import Self
 
 
 class Node:
-    """A container that contains data and a pointer to another node.
+    """Um objeto que contém um dado e uma referêcia para outro nó (Node).
 
-    As a container with a pointer to another container, the Node can be used to
-    create a link between two elements, constituting a data structure.
+    Sendo um objeto que aponta para outro nó, ele pode ser usado para criar uma
+    estrutura baseada na ligação entre diferentes elementos.
     """
 
     def __init__(self, data, next_node: Self = None):

@@ -4,11 +4,11 @@ from implementations.node import Node
 
 
 class Stack:
-    """A simple stack implementation in Python.
+    """Uma implementação simples da pilha (stack) em Python utilizando nós.
 
-    This class represents a stack data structure, which follows the Last In,
-    First Out (LIFO) principle. Elements are added and removed from the top of
-    the stack.
+    Essa classe representa a estrutura de dados pilha, a qual segue o princípio
+    Last-In-First-Out (LIFO). Operações de adição e remoção só podem ser realizadas
+    no topo da pilha.
     """
 
     def __init__(self, items: Iterable = None):
@@ -20,13 +20,13 @@ class Stack:
 
     @property
     def size(self) -> int:
-        """Number of elements of the stack."""
+        """Número de elementos da pilha."""
 
         return self._size
 
     @property
     def top(self) -> Any:
-        """The element at the top of the stack."""
+        """O elemento no topo da pilha."""
 
         return self._top_node.data
 
@@ -45,12 +45,12 @@ class Stack:
         return f"[{', '.join(items)}]"
 
     def is_empty(self) -> bool:
-        """Return True if stack has no elements; otherwise, return False."""
+        """Retorna True se a pilha não tiver elementos; caso contrário, retorna False."""
 
         return self.size == 0
 
     def push(self, item):
-        """Add an element to the top of the stack."""
+        """Adiciona um elemento ao topo da pilha."""
 
         new_node = Node(item)
 
@@ -60,7 +60,7 @@ class Stack:
         self._size += 1
 
     def pop(self) -> Any:
-        """Remove and return the element from the top of the stack."""
+        """Remove e retorna o elemento do topo da pilha."""
 
         if self.is_empty():
             raise IndexError("pop from empty stack")
@@ -72,7 +72,7 @@ class Stack:
         return top_data
 
     def _get_items_from_iterable(self, iterable: Iterable):
-        """Incorporate items from iterable into the stack."""
+        """Incorpora itens de um iterável à pilha."""
 
         for item in iterable:
             self.push(item)

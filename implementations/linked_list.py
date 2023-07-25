@@ -4,11 +4,11 @@ from implementations.node import Node
 
 
 class LinkedList:
-    """A simple linked list implementation in Python.
+    """Uma simples implementação da lista ligada em Python.
 
-    This class represents a singly linked list, where each element is stored
-    in a Node object. Each Node contains a 'data' field that holds the element
-    value and a 'next' reference pointing to the next Node in the list.
+    Essa classe representa uma lista ligada (linked list), na qual cada elemento
+    é armazenado em um objeto do tipo nó (Node). Cada nó contém um campo 'data'
+    (dado), o qual contém um valor, e uma referência ao próximo (next) nó da lista.
     """
 
     def __init__(self, items: Iterable = None):
@@ -54,7 +54,7 @@ class LinkedList:
         return self._size
 
     def append(self, item):
-        """Append object to the end of the list."""
+        """Adiciona um objeto ao fim da lista."""
         new_node = Node(item)
 
         if self._head == None:
@@ -69,10 +69,7 @@ class LinkedList:
         self._size += 1
 
     def remove(self, item):
-        """Remove first occurrence of value.
-
-        Raises ValueError if the value is not present.
-        """
+        """Remove a primeira ocorrência de um valor."""
 
         current_node = self._head
         previous_node = None
@@ -94,7 +91,7 @@ class LinkedList:
         raise ValueError(f"'{item}' not in list")
 
     def _get_items_from_iterable(self, iterable: Iterable):
-        """Incorporate items from iterable into the linked list."""
+        """Incorpora itens de um iterável à lista ligada."""
 
         for item in iterable:
             self.append(item)

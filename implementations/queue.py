@@ -4,11 +4,11 @@ from implementations.node import Node
 
 
 class Queue:
-    """A simple queue implementation in Python using nodes.
+    """Uma simples implementação da fila (queue) em Python usando nós.
 
-    This class represents a queue data structure, which follows the First In,
-    First Out (FIFO) principle. Elements are added to the back of the queue and
-    removed from the front.
+    Essa classe representa a estrutura de dados fila, a qual segue o princípio
+    First-In-First-Out (FIFO). Elementos novos são adicionados ao fim da fila, e
+    apenas o elemento da frente pode ser removido.
     """
 
     def __init__(self, items: Iterable = None):
@@ -18,13 +18,13 @@ class Queue:
 
     @property
     def size(self) -> int:
-        """Number of elements of the queue."""
+        """Número de elementos da fila."""
 
         return self._size
 
     @property
     def front(self) -> Any:
-        """The front element of the queue."""
+        """O elemento à frente da fila."""
 
         return self._front_node.data
 
@@ -43,12 +43,12 @@ class Queue:
         return f"[{', '.join(items)}]"
 
     def is_empty(self) -> bool:
-        """Return True if queue has no elements; otherwise, return False."""
+        """Retorna True se a fila não tiver elementos; caso contrário, retorna False."""
 
         return self.size == 0
 
     def enqueue(self, item):
-        """Add an element to the back of the queue."""
+        """Adiciona um elemento ao fim da fila."""
 
         new_node = Node(item)
 
@@ -61,7 +61,7 @@ class Queue:
         self._size += 1
 
     def dequeue(self) -> Any:
-        """Remove and return the element from the front of the queue."""
+        """Remove e retorna o elemento à frente da fila."""
 
         if self.is_empty():
             raise IndexError("dequeue from empty queue")
@@ -77,7 +77,7 @@ class Queue:
         return front_node_data
 
     def _get_items_from_iterable(self, iterable: Iterable):
-        """Incorporate items from iterable into the queue."""
+        """Incorpora itens de um iterável à fila."""
 
         for item in iterable:
             self.enqueue(item)
