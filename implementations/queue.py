@@ -16,6 +16,9 @@ class Queue:
         self._rear_node = None
         self._size = 0
 
+        if items != None:
+            self._get_items_from_iterable(items)
+
     @property
     def size(self) -> int:
         """Número de elementos da fila."""
@@ -24,7 +27,7 @@ class Queue:
 
     @property
     def front(self) -> Any:
-        """O elemento à frente da fila."""
+        """O primeiro elemento da fila."""
 
         return self._front_node.data
 
