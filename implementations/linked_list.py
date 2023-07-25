@@ -83,7 +83,7 @@ class LinkedList:
 
                 self._size -= 1
 
-                break
+                return
 
             previous_node = current_node
             current_node = current_node.next_node
